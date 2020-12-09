@@ -1,6 +1,9 @@
 {
   "name": "duckyapp",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.6.1"
+  },
   "description": "Ducky",
   "main": "server.js",
   "scripts": {
