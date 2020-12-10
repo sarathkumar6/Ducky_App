@@ -17,7 +17,6 @@ const Activities = ({ displayEditAndDelete }) => {
 	} else {
 		return (
 			<Fragment>
-				<div className='title'>Activities</div>
 				<TransitionGroup>
 					{activities.map((activity) => (
 						<CSSTransition key={activity._id} timeout={500} classNames='item'>

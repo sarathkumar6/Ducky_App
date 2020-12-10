@@ -12,21 +12,16 @@ const Home = () => {
 		//eslint-disable-next-line
 	}, []);
 	return (
-		<div className='grid-3'>
-			<div>{/* Contact Form */}</div>
-			<div>
-				{user && user.type === 'farmer' ? (
-					<div>
-						<ActivityForm />
-						<Activities displayEditAndDelete={true} />
-					</div>
-				) : (
-					<Fragment>
-						<Activities displayEditAndDelete={false} />
-					</Fragment>
-				)}
-			</div>
-		</div>
+		<Fragment>
+			{user && user.type === 'farmer' ? (
+				<div className='home-layout'>
+					<ActivityForm />
+					<Activities displayEditAndDelete={true} />
+				</div>
+			) : (
+				<Activities displayEditAndDelete={false} />
+			)}
+		</Fragment>
 	);
 };
 
