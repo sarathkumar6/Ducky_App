@@ -63,7 +63,7 @@ router.put('/:id', authClient, async (request, response) => {
 	if (food) _.set(activityFields, 'food', food);
 	if (foodType) _.set(activityFields, 'foodType', foodType);
 	if (foodQuantity) _.set(activityFields, 'foodQuantity', foodQuantity);
-	if (country) _.set(activityFields, 'countr', country);
+	if (country) _.set(activityFields, 'country', country);
 
 	try {
 		const clientInfo = await Client.findById(request.client.id).select('-password');
