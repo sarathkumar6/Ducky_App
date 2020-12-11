@@ -21,8 +21,17 @@ const Login = (props) => {
 				setAlert(error, 'danger');
 				clearErrors();
 			}
+			/**{
+				error &&
+					error.length > 0 &&
+					error.map((eachErr) => {
+						setAlert(eachErr.msg, 'danger');
+					});
+			}
+			clearErrors();*/
+			//eslint-disable-next-line
 		},
-		[ error, isAuthenticated, type, props.history, clearErrors, setAlert ]
+		[ error, isAuthenticated, type, props.history ]
 	);
 
 	// onChangeHandler to set logged in user
@@ -35,12 +44,14 @@ const Login = (props) => {
 	// ToDo: Handle errors on delete and set alert
 	const onSubmitHandler = (e) => {
 		e.preventDefault();
-		email === '' || password === ''
-			? setAlert('Please fill in all fields', 'danger')
-			: loginUser({
-					email,
-					password
-				});
+		if (email === '' || password === '') {
+			setAlert('Please fill in all fields', 'danger');
+		} else {
+			loginUser({
+				email,
+				password
+			});
+		}
 	};
 	const { email, password } = user;
 

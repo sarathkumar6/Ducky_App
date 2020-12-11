@@ -7,35 +7,35 @@ const Activities = ({ displayEditAndDelete }) => {
 	const activityContext = useContext(ActivityContext);
 	const { activities, getActivities } = activityContext;
 
-	useEffect(
-		() => {
-			getActivities();
-		},
-		[ getActivities ]
-	);
+	useEffect(() => {
+		getActivities();
+		//eslint-disable-next-line
+	}, []);
 
-	return !activities ? (
-		<h4>Pleae add a activity</h4>
-	) : (
-		<Fragment>
-			<TransitionGroup>
-				{activities.map((activity) => (
-					<CSSTransition key={activity._id} timeout={500} classNames='item'>
-						<ActivityItem
-							clientName={activity.clientName}
-							food={activity.food}
-							foodQuantity={activity.foodQuantity}
-							id={activity._id}
-							foodType={activity.foodType}
-							country={activity.country}
-							date={activity.date}
-							numberOfDucks={activity.numberOfDucks}
-							displayEditAndDelete={displayEditAndDelete}
-						/>
-					</CSSTransition>
-				))}
-			</TransitionGroup>
-		</Fragment>
-	);
+	if (!activities) {
+		return <h4>Pleae add a activity</h4>;
+	} else {
+		return (
+			<Fragment>
+				<TransitionGroup>
+					{activities.map((activity) => (
+						<CSSTransition key={activity._id} timeout={500} classNames='item'>
+							<ActivityItem
+								clientName={activity.clientName}
+								food={activity.food}
+								foodQuantity={activity.foodQuantity}
+								id={activity._id}
+								foodType={activity.foodType}
+								country={activity.country}
+								date={activity.date}
+								numberOfDucks={activity.numberOfDucks}
+								displayEditAndDelete={displayEditAndDelete}
+							/>
+						</CSSTransition>
+					))}
+				</TransitionGroup>
+			</Fragment>
+		);
+	}
 };
 export default Activities;
