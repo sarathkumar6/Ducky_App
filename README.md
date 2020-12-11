@@ -2,7 +2,7 @@
 A simple full-stack web application that allows farmers to record duck feeding activities and scientists to track the activity
 
 ## Demo 
-https://afternoon-beyond-07191.herokuapp.com/
+https://infinite-chamber-77743.herokuapp.com/login
 
 ## Technology Stack
 *Ducky* is built using MERN stack(MongoDB Express React NodeJS)
