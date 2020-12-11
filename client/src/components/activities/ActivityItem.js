@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import ActivityContext from '../../context/activity/activityContext';
+import AlerContext from '../../context/alert/alertContext';
 
 const ActivityItem = ({
 	id,
@@ -15,14 +16,17 @@ const ActivityItem = ({
 	displayEditAndDelete
 }) => {
 	const activityContext = useContext(ActivityContext);
+	const { setAlert } = useContext(AlerContext);
 	const { deleteActivity, setCurrent, clearCurrent } = activityContext;
 	const onDeleteHandler = () => {
 		deleteActivity(id);
+		setAlert('Activity deleted successfully', 'success');
 		clearCurrent();
 	};
 	const onEditHandler = () => {
 		setCurrent({ id, clientName, food, foodQuantity, foodType, numberOfDucks, date, country });
 	};
+
 	return (
 		<div className='card bg-light'>
 			<h3 className='text-primary text-left'>

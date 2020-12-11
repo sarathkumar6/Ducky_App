@@ -30,6 +30,8 @@ router.post('/', [ authClient ], async (request, response) => {
 	}
 	const { numberOfDucks, food, foodType, country, foodQuantity } = request.body;
 	try {
+		const alertContext = useContext(AlertContext);
+		const { setAlert } = alertContext;
 		const clientInfo = await Client.findById(request.client.id).select('-password');
 		if (clientInfo.type !== 'farmer') {
 			return response.status(401).json({ msg: 'Authorization denied: client not a farmer' });
@@ -45,9 +47,11 @@ router.post('/', [ authClient ], async (request, response) => {
 		});
 
 		const activity = await newActivity.save();
+
 		response.json(activity);
 	} catch (err) {
 		console.log(err);
+		setAlert(err, 'danger');
 		response.status(500).send(err.message);
 	}
 });

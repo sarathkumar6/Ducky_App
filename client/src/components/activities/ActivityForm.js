@@ -1,10 +1,12 @@
 import React, { useState, useContext, useEffect } from 'react';
 import ActivityContext from '../../context/activity/activityContext';
+import AlertContext from '../../context/alert/alertContext';
 
 const ActivityForm = () => {
 	const activityContext = useContext(ActivityContext);
+	const alertContext = useContext(AlertContext);
 	const { addActivity, current, clearCurrent, updateActivity } = activityContext;
-
+	const { setAlert } = alertContext;
 	useEffect(
 		() => {
 			if (current) {
@@ -38,8 +40,10 @@ const ActivityForm = () => {
 		e.preventDefault();
 		if (!current) {
 			addActivity(activity);
+			setAlert('Activity added successfully', 'success');
 		} else {
 			updateActivity(activity);
+			setAlert('Activity updated successfully', 'success');
 			clearCurrent();
 		}
 	};

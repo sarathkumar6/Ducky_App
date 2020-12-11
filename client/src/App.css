@@ -406,6 +406,10 @@ table th {
 	transition: opacity 1000ms ease-in;
 }
 
+.home-layout {
+	display: flex;
+	justify-content: space-around;
+}
 /* Mobile Styles */
 @media (max-width: 700px) {
 	.hide-sm {
@@ -448,5 +452,9 @@ table th {
 	.navbar ul {
 		text-align: center;
 		justify-content: center;
+	}
+
+	.home-layout {
+		flex-direction: column;
 	}
 }

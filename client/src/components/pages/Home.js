@@ -19,7 +19,9 @@ const Home = () => {
 					<Activities displayEditAndDelete={true} />
 				</div>
 			) : (
-				<Activities displayEditAndDelete={false} />
+				<div className='home-layout home-layout_activity-item'>
+					<Activities displayEditAndDelete={false} />
+				</div>
 			)}
 		</Fragment>
 	);
