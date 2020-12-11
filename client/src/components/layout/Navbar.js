@@ -43,13 +43,16 @@ const Navbar = ({ title, icon }) => {
 	);
 };
 
+// Navbar PropTypes to perform prop validation
 Navbar.propTypes = {
 	title: PropTypes.string.isRequired,
 	icon: PropTypes.string
 };
 
+// Navbar props default value
 Navbar.defaultProps = {
 	title: 'Ducky',
 	icon: 'fad fa-duck'
 };
+
 export default Navbar;

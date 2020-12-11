@@ -35,9 +35,9 @@ const AuthState = (props) => {
 		}
 		try {
 			const response = await axios.get('api/auth');
-			console.log(response);
 			dispatch({ type: USER_LOADED, payload: response.data });
 		} catch (err) {
+			// ToDo: set the AUTH_ERROR state and set alert
 			dispatch({ type: AUTH_ERROR });
 		}
 	};
@@ -51,14 +51,13 @@ const AuthState = (props) => {
 		};
 		try {
 			const response = await axios.post('/api/clients', registerInfo, config);
-			console.log(response);
 			dispatch({
 				type: REGISTER_SUCCESS,
 				payload: response.data
 			});
 			loadUser();
 		} catch (err) {
-			console.log(err);
+			// ToDo: set the REGISTER_FAIL state and set alert
 			dispatch({
 				type: REGISTER_FAIL,
 				payload: err.response.data.message
@@ -82,7 +81,7 @@ const AuthState = (props) => {
 			});
 			loadUser();
 		} catch (err) {
-			console.log(err);
+			// ToDo: set the LOGIN_FAIL state and set alert
 			dispatch({
 				type: LOGIN_FAIL,
 				payload: err.response.data.message

@@ -106,7 +106,7 @@ ul {
 }
 
 .list li i {
-	color: #892cdc;
+	color: var(--primary-color);
 }
 
 .btn {
@@ -244,13 +244,6 @@ button {
 	font: inherit;
 }
 
-.form-group {
-	margin: 1.2rem 0;
-}
-
-.form-group input {
-	margin: 0.2rem 0;
-}
 
 .form-container {
 	max-width: 500px;
@@ -274,6 +267,15 @@ table td {
 table th {
 	background: var(--light-color);
 }
+
+.form-group {
+	margin: 1.2rem 0;
+}
+
+.form-group input {
+	margin: 0.2rem 0;
+}
+
 
 .title {
 	font-weight: bold;

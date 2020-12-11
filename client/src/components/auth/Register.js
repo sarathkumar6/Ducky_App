@@ -24,24 +24,29 @@ const Register = (props) => {
 				clearErrors();
 			}
 		},
-		[ error, isAuthenticated, props.history ]
+		[ error, isAuthenticated, props.history, clearErrors, setAlert ]
 	);
+
+	// onChangeHandler to set the registered in client
 	const onChangeHandler = (e) => {
 		setClient({ ...client, [e.target.name]: e.target.value });
 	};
 
+	// onSubmitHandler to verify registration form info and set alert
+	// if any form validation errors
 	const onSubmitHandler = (e) => {
 		e.preventDefault();
 
 		if (name === '' || email === '' || password === '') {
 			setAlert('Please enter all fields', 'danger');
 		} else if (password !== password2) {
-			setAlert('Password donot match', 'danger');
+			setAlert('Password do not match', 'danger');
 		} else {
 			register({ name, email, password, type });
 		}
 	};
 	const { name, email, password, password2, type } = client;
+
 	return (
 		<div className='form-container'>
 			<h1>

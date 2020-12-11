@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import {
 	REGISTER_FAIL,
 	REGISTER_SUCCESS,
@@ -10,7 +9,7 @@ import {
 	CLEAR_ERRORS
 } from '../types';
 
-export default (state, action) => {
+const AuthReducer = (state, action) => {
 	switch (action.type) {
 		case REGISTER_SUCCESS:
 		case LOGIN_SUCCESS:
@@ -52,3 +51,5 @@ export default (state, action) => {
 			return state;
 	}
 };
+
+export default AuthReducer;

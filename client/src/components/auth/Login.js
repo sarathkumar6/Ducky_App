@@ -21,36 +21,29 @@ const Login = (props) => {
 				setAlert(error, 'danger');
 				clearErrors();
 			}
-			/**{
-				error &&
-					error.length > 0 &&
-					error.map((eachErr) => {
-						setAlert(eachErr.msg, 'danger');
-					});
-			}
-			clearErrors();*/
-			//eslint-disable-next-line
 		},
-		[ error, isAuthenticated, type, props.history ]
+		[ error, isAuthenticated, type, props.history, clearErrors, setAlert ]
 	);
 
+	// onChangeHandler to set logged in user
 	const onChangeHandler = (e) => {
 		setUser({ ...user, [e.target.name]: e.target.value });
 	};
 
+	// onSubmitHandler to submit user login credentials and alert
+	// if any errors
+	// ToDo: Handle errors on delete and set alert
 	const onSubmitHandler = (e) => {
 		e.preventDefault();
-		console.log('Login Submit');
-		if (email === '' || password === '') {
-			setAlert('Please fill in all fields', 'danger');
-		} else {
-			loginUser({
-				email,
-				password
-			});
-		}
+		email === '' || password === ''
+			? setAlert('Please fill in all fields', 'danger')
+			: loginUser({
+					email,
+					password
+				});
 	};
 	const { email, password } = user;
+
 	return (
 		<div className='form-container'>
 			<h1>

@@ -12,6 +12,8 @@ import AuthState from './context/auth/AuthState';
 import AlertState from './context/alert/AlertState';
 import setAuthToken from './utils/setAuthToken';
 
+// Set Auth token to local storage and use the token to validate/authenticate
+// the REST API requests against Clients documents
 if (localStorage.token) {
 	setAuthToken(localStorage.token);
 }

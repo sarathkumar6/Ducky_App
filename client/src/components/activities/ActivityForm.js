@@ -9,20 +9,18 @@ const ActivityForm = () => {
 	const { setAlert } = alertContext;
 	useEffect(
 		() => {
-			if (current) {
-				setActivity(current);
-			} else {
-				setActivity({
-					food: '',
-					foodQuantity: '',
-					country: '',
-					foodType: 'veggies',
-					numberOfDucks: ''
-				});
-			}
+			current
+				? setActivity(current)
+				: setActivity({
+						food: '',
+						foodQuantity: '',
+						country: '',
+						foodType: 'veggies',
+						numberOfDucks: ''
+					});
 		},
 		[ activityContext, current ]
-	); // only want to happen during contactContext and current
+	); // only want to happen during activityContext and current
 
 	const [ activity, setActivity ] = useState({
 		food: '',
@@ -32,10 +30,14 @@ const ActivityForm = () => {
 		numberOfDucks: ''
 	});
 	const { food, foodQuantity, country, foodType, numberOfDucks } = activity;
+
+	// onChangeHandler to set activity
 	const onChangeHandler = (e) => {
 		setActivity({ ...activity, [e.target.name]: e.target.value });
 	};
 
+	// onSubmitHandler to add and update an activity
+	// ToDo: Handle add and update activity errors and set alert
 	const onSubmitHandler = (e) => {
 		e.preventDefault();
 		if (!current) {
@@ -43,11 +45,12 @@ const ActivityForm = () => {
 			setAlert('Activity added successfully', 'success');
 		} else {
 			updateActivity(activity);
-			setAlert('Activity updated successfully', 'success');
+			setAlert('Activity update successfully', 'success');
 			clearCurrent();
 		}
 	};
 
+	// Clear the form contents on clear
 	const clearAll = () => {
 		clearCurrent();
 	};

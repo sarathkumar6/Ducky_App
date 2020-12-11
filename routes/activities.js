@@ -50,7 +50,6 @@ router.post('/', [ authClient ], async (request, response) => {
 
 		response.json(activity);
 	} catch (err) {
-		console.log(err);
 		setAlert(err, 'danger');
 		response.status(500).send(err.message);
 	}
@@ -95,7 +94,6 @@ router.put('/:id', authClient, async (request, response) => {
 router.delete('/:id', authClient, async (request, response) => {
 	try {
 		const clientInfo = await Client.findById(_.get(request, 'client.id')).select('-password');
-		console.log(clientInfo);
 		if (clientInfo.type !== 'farmer') {
 			return response.status(401).json({ msg: 'Authorization denied: client not a farmer' });
 		}

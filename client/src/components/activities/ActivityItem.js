@@ -18,11 +18,16 @@ const ActivityItem = ({
 	const activityContext = useContext(ActivityContext);
 	const { setAlert } = useContext(AlerContext);
 	const { deleteActivity, setCurrent, clearCurrent } = activityContext;
+
+	// onDeleteHandler to delete an activity
+	// ToDo: Handle errors on delete and set alert
 	const onDeleteHandler = () => {
 		deleteActivity(id);
 		setAlert('Activity deleted successfully', 'success');
 		clearCurrent();
 	};
+
+	// onEditHandler sets the activity to be edited on the form
 	const onEditHandler = () => {
 		setCurrent({ id, clientName, food, foodQuantity, foodType, numberOfDucks, date, country });
 	};

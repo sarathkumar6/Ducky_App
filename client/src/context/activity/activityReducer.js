@@ -10,7 +10,8 @@ import {
 	CLEAR_ACTIVITIES
 } from '../types';
 
-export default (state, action) => {
+// eslint-disable-next-line
+const ActivityReducer = (state, action) => {
 	switch (action.type) {
 		case ADD_ACTIVITY:
 			return {
@@ -70,3 +71,5 @@ export default (state, action) => {
 			return state;
 	}
 };
+
+export default ActivityReducer;
