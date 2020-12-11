@@ -105,6 +105,9 @@ ul {
 	padding-bottom: 0.3rem;
 }
 
+.list li i {
+	color: #892cdc;
+}
 
 .btn {
 	display: inline-block;
