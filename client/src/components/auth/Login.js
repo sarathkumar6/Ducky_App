@@ -31,7 +31,7 @@ const Login = (props) => {
 			clearErrors();*/
 			//eslint-disable-next-line
 		},
-		[ error, isAuthenticated, type, props.history ]
+		[ error, isAuthenticated, type, props.history, clearErrors, setAlert ]
 	);
 
 	// onChangeHandler to set logged in user
