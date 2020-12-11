@@ -14,12 +14,12 @@ const Home = () => {
 	return (
 		<Fragment>
 			{user && user.type === 'farmer' ? (
-				<div className='home-layout'>
+				<div className='home-layout container-farmers'>
 					<ActivityForm />
 					<Activities displayEditAndDelete={true} />
 				</div>
 			) : (
-				<div className='home-layout home-layout_activity-item'>
+				<div className='container-scientists'>
 					<Activities displayEditAndDelete={false} />
 				</div>
 			)}

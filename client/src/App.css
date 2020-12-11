@@ -36,16 +36,19 @@ ul {
 	list-style: none;
 }
 
-img {
-	width: 100%;
-}
-
 /* Utilities */
-.container {
-	max-width: 1100px;
+.container-farmers, .container-scientists {
 	margin: auto;
 	overflow: hidden;
 	padding: 0 2rem;
+}
+.container-farmers {
+	max-width: 1100px;
+	display: flex;
+	justify-content: space-around;
+}
+.container-scientists {
+	max-width: 600px;
 }
 
 /* Text Styles*/
@@ -59,35 +62,6 @@ img {
 	font-size: 3rem;
 	line-height: 1.2;
 	margin-bottom: 1rem;
-}
-
-.lead {
-	font-size: 1.5rem;
-	margin-bottom: 1rem;
-}
-
-.text-center {
-	text-align: center;
-}
-
-.text-primary {
-	color: var(--primary-color);
-}
-
-.text-dark {
-	color: var(--dark-color);
-}
-
-.text-center {
-	text-align: center;
-}
-
-.text-right {
-	text-align: right;
-}
-
-.text-left {
-	text-align: left;
 }
 
 /* Cards */
@@ -104,83 +78,6 @@ img {
 
 .list li {
 	padding-bottom: 0.3rem;
-}
-
-/* Padding */
-.p {
-	padding: 0.5rem;
-}
-.p-1 {
-	padding: 1rem;
-}
-.p-2 {
-	padding: 2rem;
-}
-.p-3 {
-	padding: 3rem;
-}
-.py {
-	padding: 0.5rem 0;
-}
-.py-1 {
-	padding: 1rem 0;
-}
-.py-2 {
-	padding: 2rem 0;
-}
-.py-3 {
-	padding: 3rem 0;
-}
-
-/* Margin */
-.m {
-	margin: 0.5rem;
-}
-.m-1 {
-	margin: 1rem;
-}
-.m-2 {
-	margin: 2rem;
-}
-.m-3 {
-	margin: 3rem;
-}
-.my {
-	margin: 0.5rem 0;
-}
-.my-1 {
-	margin: 1rem 0;
-}
-.my-2 {
-	margin: 2rem 0;
-}
-.my-3 {
-	margin: 3rem 0;
-}
-
-/* Grid */
-.grid-2 {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-gap: 2rem;
-}
-
-.grid-3 {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 1rem;
-}
-
-.grid-4 {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-gap: 2rem;
-}
-
-.grid-2-3 {
-	display: grid;
-	grid-template-columns: 2fr 3fr;
-	grid-gap: 2rem;
 }
 
 .btn {
@@ -287,10 +184,6 @@ img {
 .bg-light,
 .badge-light {
 	border: #ccc solid 1px;
-}
-
-.round-img {
-	border-radius: 50%;
 }
 
 /* Forms */
@@ -406,20 +299,10 @@ table th {
 	transition: opacity 1000ms ease-in;
 }
 
-.home-layout {
-	display: flex;
-	justify-content: space-around;
-}
 /* Mobile Styles */
 @media (max-width: 700px) {
 	.hide-sm {
 		display: none;
-	}
-
-	.grid-2,
-	.grid-3,
-	.grid-4 {
-		grid-template-columns: 1fr;
 	}
 
 	/* Text Styles */
@@ -429,10 +312,6 @@ table th {
 
 	.large {
 		font-size: 2rem;
-	}
-
-	.lead {
-		font-size: 1rem;
 	}
 
 	/* Navbar */
@@ -454,7 +333,7 @@ table th {
 		justify-content: center;
 	}
 
-	.home-layout {
+	.container-farmers {
 		flex-direction: column;
 	}
 }

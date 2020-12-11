@@ -24,14 +24,12 @@ const App = () => {
 					<Router>
 						<Fragment>
 							<Navbar />
-							<div className='container'>
-								<Alerts />
-								<Switch>
-									<PrivateRoute exact path='/' component={Home} />
-									<Route exact path='/register' component={Register} />
-									<Route exact path='/login' component={Login} />
-								</Switch>
-							</div>
+							<Alerts />
+							<Switch>
+								<PrivateRoute exact path='/' component={Home} />
+								<Route exact path='/register' component={Register} />
+								<Route exact path='/login' component={Login} />
+							</Switch>
 						</Fragment>
 					</Router>
 				</AlertState>
