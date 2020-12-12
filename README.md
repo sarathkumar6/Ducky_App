@@ -8,17 +8,26 @@ https://infinite-chamber-77743.herokuapp.com/
 *Ducky* is built using MERN stack(MongoDB Express React NodeJS)
 
 ## Minimum Viable Product
-  1. Allow a farmer to register an account with Ducky
+  1. Allow farmer/s to register an account with Ducky
   2. Allow the farmer to Create, Read, Update, and Delete a feeding activity of the duck/s
   3. Allow the farmer to logout from Ducky
-  4. Allow a scientist to register an account with Ducky
+  4. Allow scientist/s to register an account with Ducky
   5. Allow the scientist to read feeding activities recorded by the farmer/s
   6. Allow the scientist to logout from Ducky
   
+## Future Work
+  1. Allow farmer/s to record feeding activity through an auto-record option
+  2. Allow farmer/s to update the date and time of a recorded activity
+  3. Allow farmer/s to search an activity 
+  4. Allow scientit/s to search for an activity using country, farmer, and food type
+  5. Allow scientist/s to import the actitivities to a PDF or Excel document
+  
 ## Technical Considerations
-  * Role Based Access Control approach to differentiate a farmer and a scientist
+  * Role Based Access Control approach to differentiate a farmer and a scientist to fetch activities 
+      a) A farmer can only view his/her activities
+      b) A scientist can view all the activities of all the farmers
   * Data Model Design
-      * Ducky is build using NoSQL database for the following reasons
+       * Ducky is build using NoSQL database for the following reasons
           a) Optimized querying
           b) No shcema/tructure data - flexibility to model data based on the requirements in the future
           c) Scales well horisontally and cost-effective
