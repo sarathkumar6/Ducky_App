@@ -2,7 +2,7 @@
 A simple full-stack web application that allows farmers to record duck feeding activities and scientists to track the activity
 
 ## Demo 
-https://infinite-chamber-77743.herokuapp.com/login
+https://infinite-chamber-77743.herokuapp.com/
 
 ## Technology Stack
 *Ducky* is built using MERN stack(MongoDB Express React NodeJS)
@@ -18,5 +18,16 @@ https://infinite-chamber-77743.herokuapp.com/login
 ## Technical Considerations
   * Role Based Access Control approach to differentiate a farmer and a scientist
   * Data Model Design
-      * Users and Records as two documents that contain information of farmers and scientists and feeding activity respectively
+      * Ducky is build using NoSQL database for the following reasons
+          a) Optimized querying
+          b) No shcema/tructure data - flexibility to model data based on the requirements in the future
+          c) Scales well horisontally and cost-effective
+          d) To leverage the soft state and eventual consistency
+      * Clients and Activities as two documents that contain information of farmers and scientists and feeding activity respectively
       * Normalized data model - Farmer in the Users will reference respective feeding activity in the Records document
+          a) Normalized behavior is preferred over Embedded model 
+              * To avoid the duplication of clients data
+              * Allow complex many-to-many relationships in the future based on the requirements
+   * User Interface Design
+      * The state management of Ducky is handled using React Hooks i.e., useContext, useReducer, useState, and useEffect instead of
+        Redux state management library as the application doesn't involve multi-level transactions and a limited moving parts i.e., managing the feeding activity
