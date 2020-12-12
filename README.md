@@ -23,11 +23,11 @@ https://infinite-chamber-77743.herokuapp.com/
   5. Allow scientist/s to import the actitivities to a PDF or Excel document
   
 ## Technical Considerations
-  * Role Based Access Control approach to differentiate a farmer and a scientist to fetch activities 
+  * Role Based Access Control approach to differentiate a farmer and a scientist to fetch activities
       a) A farmer can only view his/her activities
       b) A scientist can view all the activities of all the farmers
   * Data Model Design
-       * Ducky is build using NoSQL database for the following reasons
+       * Ducky's database is built using NoSQL DB for the following reasons
           a) Optimized querying
           b) No shcema/tructure data - flexibility to model data based on the requirements in the future
           c) Scales well horisontally and cost-effective
@@ -38,5 +38,9 @@ https://infinite-chamber-77743.herokuapp.com/
               * To avoid the duplication of clients data
               * Allow complex many-to-many relationships in the future based on the requirements
    * User Interface Design
+      * Ducky's UI is built using React JS library for the following reasons
+        a) Widely used frameworks/libraries to build scalable and pleasant UI is the industry are Angular, React, Vue, Svelete
+           and React is preferred due to the flux-architecture of one-directional data binding 
+        b) React has a small learning curve but a large and activity community presence to improve the development experience
       * The state management of Ducky is handled using React Hooks i.e., useContext, useReducer, useState, and useEffect instead of
         Redux state management library as the application doesn't involve multi-level transactions and a limited moving parts i.e., managing the feeding activity
