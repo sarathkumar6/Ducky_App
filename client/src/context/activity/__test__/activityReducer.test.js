@@ -32,7 +32,11 @@ test('should return updated state with activities on GET_ACTIVITIES', () => {
 			}
 		]
 	};
+
+	// Before Getting Activities
 	expect(state.activities.length).toBe(0);
+
+	// After Getting Activities
 	expect(activityReducer(state, action).activities.length).toBe(2);
 });
 

@@ -54,7 +54,7 @@ const ActivityForm = () => {
 	return (
 		<form onSubmit={onSubmitHandler}>
 			<h2 className='text-primary'> {current ? 'Edit Activity' : 'Add Activity'}</h2>
-			<label for='no_of_ducks'>No of Ducks</label>
+			<label htmlor='no_of_ducks'>No of Ducks</label>
 			<input
 				type='text'
 				placeholder='i.e., 5'
@@ -62,9 +62,15 @@ const ActivityForm = () => {
 				value={numberOfDucks}
 				onChange={onChangeHandler}
 			/>
-			<label for='food'>Food</label>
-			<input type='text' placeholder='i.e., Lettuce, Oats' name='food' value={food} onChange={onChangeHandler} />
-			<label for='quantity'>Quantity</label>
+			<label htmlFor='food'>Food</label>
+			<input
+				type='text'
+				placeholder='i.e., Lettuce, Broccolli, Oats, Wheat'
+				name='food'
+				value={food}
+				onChange={onChangeHandler}
+			/>
+			<label htmlFor='quantity'>Quantity</label>
 			<input
 				type='text'
 				placeholder='i.e., 5'
@@ -75,7 +81,7 @@ const ActivityForm = () => {
 			<label id='=country'>Country</label>
 			<input
 				type='text'
-				placeholder='i.e., CA, US, IND, FR'
+				placeholder='i.e., CA, US, IND, FR, GE'
 				name='country'
 				value={country}
 				onChange={onChangeHandler}
