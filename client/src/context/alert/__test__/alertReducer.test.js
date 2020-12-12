@@ -8,7 +8,7 @@ test('should return default state when no action type matches', () => {
 	expect(alertReducer(defaultState, defaultAlert).length).toBe(0);
 });
 
-test('should return updated state with the payload when action matches', () => {
+test('should return updated state when action matches', () => {
 	const setAlertAction = {
 		type: 'SET_ALERT',
 		payload: {
@@ -21,11 +21,10 @@ test('should return updated state with the payload when action matches', () => {
 		type: 'REMOVE_ALERT',
 		payload: '78bbecf1-2819-4ec1-a83c-f67fbf400664'
 	};
-	let defaultState = [];
-	expect(defaultState.length).toBe(0);
+	let state = [];
+	expect(state.length).toBe(0);
 
-	defaultState = alertReducer([], setAlertAction);
-	expect(defaultState.length).toBe(1);
-	const finalState = alertReducer(defaultState, removeAlertAction);
-	expect(alertReducer(defaultState, removeAlertAction).length).toBe(0);
+	state = alertReducer([], setAlertAction);
+	expect(state.length).toBe(1);
+	expect(alertReducer(state, removeAlertAction).length).toBe(0);
 });
