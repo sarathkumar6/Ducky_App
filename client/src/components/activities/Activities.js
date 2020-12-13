@@ -1,5 +1,4 @@
 import React, { Fragment, useContext, useEffect } from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import ActivityContext from '../../context/activity/activityContext';
 import ActivityItem from './ActivityItem';
 
@@ -8,33 +7,32 @@ const Activities = ({ displayEditAndDelete }) => {
 	const { activities, getActivities } = activityContext;
 
 	useEffect(() => {
-		getActivities();
+		if (!activities) {
+			getActivities();
+		}
 		//eslint-disable-next-line
 	}, []);
 
 	if (!activities) {
-		return <h4>Pleae add a activity</h4>;
+		return <h4>Pleae add an activity</h4>;
 	} else {
 		return (
-			<Fragment>
-				<TransitionGroup>
-					{activities.map((activity) => (
-						<CSSTransition key={activity._id} timeout={500} classNames='item'>
-							<ActivityItem
-								clientName={activity.clientName}
-								food={activity.food}
-								foodQuantity={activity.foodQuantity}
-								id={activity._id}
-								foodType={activity.foodType}
-								country={activity.country}
-								date={activity.date}
-								numberOfDucks={activity.numberOfDucks}
-								displayEditAndDelete={displayEditAndDelete}
-							/>
-						</CSSTransition>
-					))}
-				</TransitionGroup>
-			</Fragment>
+			<div className='activities-container'>
+				{activities.map((activity) => (
+					<ActivityItem
+						key={activity._id}
+						clientName={activity.clientName}
+						food={activity.food}
+						foodQuantity={activity.foodQuantity}
+						id={activity._id}
+						foodType={activity.foodType}
+						country={activity.country}
+						date={activity.date}
+						numberOfDucks={activity.numberOfDucks}
+						displayEditAndDelete={displayEditAndDelete}
+					/>
+				))}
+			</div>
 		);
 	}
 };

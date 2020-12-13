@@ -28,9 +28,9 @@ const App = () => {
 							<Navbar />
 							<Alerts />
 							<Switch>
-								<PrivateRoute exact path='/' component={Home} />
-								<Route exact path='/register' component={Register} />
-								<Route exact path='/login' component={Login} />
+								<PrivateRoute exact path='/' component={Home} exact />
+								<Route exact path='/login' component={Login} exact />
+								<Route exact path='/register' component={Register} exact />
 							</Switch>
 						</Fragment>
 					</Router>

@@ -14,7 +14,7 @@ const Home = () => {
 	return (
 		<Fragment>
 			{user && user.type === 'farmer' ? (
-				<div className='home-layout container-farmers'>
+				<div className='container-farmers'>
 					<ActivityForm />
 					<Activities displayEditAndDelete={true} />
 				</div>
