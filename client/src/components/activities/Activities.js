@@ -7,7 +7,9 @@ const Activities = ({ displayEditAndDelete }) => {
 	const { activities, getActivities } = activityContext;
 
 	useEffect(() => {
-		getActivities();
+		if (!activities) {
+			getActivities();
+		}
 		//eslint-disable-next-line
 	}, []);
 
