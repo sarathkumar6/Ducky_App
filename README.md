@@ -4,6 +4,9 @@ A simple full-stack web application that allows farmers to record duck feeding a
 ## Demo 
 https://infinite-chamber-77743.herokuapp.com/
 
+## Deliverables
+https://drive.google.com/drive/folders/1Kj_HWcvkXI7feQU4IDFoTXOTOj7extOc?usp=sharing
+
 ## Technology Stack
 *Ducky* is built using MERN stack(MongoDB Express React NodeJS)
 
@@ -44,52 +47,4 @@ https://infinite-chamber-77743.herokuapp.com/
         b) React has a small learning curve but a large and activity community presence to improve the development experience
       * The state management of Ducky is handled using React Hooks i.e., useContext, useReducer, useState, and useEffect instead of
         Redux state management library as the application doesn't involve multi-level transactions and a limited moving parts i.e., managing the feeding activity
-       
-## Project Duration
-  * To build Ducky, a full-stack application using MERN stack, it has taken about 16 hours and the breakdown as follows
-      
-      a) Requirements Gathering - 30 mins
-      
-      b) Data Model Design - 30 mins
-      
-      c) User Interface Ideation - 15 mins
-      
-      d) UI Prototyping - 15 mins
-      
-      e) MongoDB Document Setup - 20 mins
-      
-      f) Build RESTful API - CRUD operations - 210 minutes
-      
-      g) Test RESTfl API through Postman - 30 minutes
-      
-      h) Build Login and Register UI - 120 minutes
-          i) Login/Register Forms
-          ii) Nav bar with Login and Register Options
-          iii)Build Login/Register/Home Routes
-      
-      i) Build Home page UI - 150 minutes
-          i) Activity Form
-          ii) Activities
-          ii) Activity Item
-      
-      j) Build Auth, Alert, Activity Context - 150 minutes
-          i) State
-          ii) Reducer
-      
-      k) Hook up UI components to the RESTful API - 120 minutes
-          i) Update state with appropriate CRUD operations
-          ii) Update the components to model incoming data after UI design
-          iii) Style UI components
-          iv) Test CRUD operations
-      
-      l) Perform End-to-End testing i.e., CRUD operations for both the clients i.e., farmer, scientist (Only Read) - 30 minutes
-      
-      m) Add unit tests to the reducers - 20 minutes
-      
-      n) Deployment - 30 minutes
-      
-      o) Update Read Me - 15 minutes
-      
-      p) Document Component Design and DB Design - 45 minutes
-      
-      q) Miscellaneous - 15 minutes
+
