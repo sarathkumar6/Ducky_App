@@ -61,6 +61,7 @@ const ActivityForm = () => {
 				name='numberOfDucks'
 				value={numberOfDucks}
 				onChange={onChangeHandler}
+				required
 			/>
 			<label htmlFor='food'>Food</label>
 			<input
@@ -69,6 +70,7 @@ const ActivityForm = () => {
 				name='food'
 				value={food}
 				onChange={onChangeHandler}
+				required
 			/>
 			<label htmlFor='quantity'>Quantity</label>
 			<input
@@ -77,6 +79,7 @@ const ActivityForm = () => {
 				name='foodQuantity'
 				value={foodQuantity}
 				onChange={onChangeHandler}
+				required
 			/>
 			<label id='=country'>Country</label>
 			<input
@@ -85,6 +88,7 @@ const ActivityForm = () => {
 				name='country'
 				value={country}
 				onChange={onChangeHandler}
+				required
 			/>
 			<input
 				type='radio'
@@ -92,6 +96,7 @@ const ActivityForm = () => {
 				value='veggies'
 				checked={foodType === 'veggies'}
 				onChange={onChangeHandler}
+				required
 			/>
 			Veggies {''}
 			<input
@@ -100,6 +105,7 @@ const ActivityForm = () => {
 				value='grains'
 				checked={foodType === 'grains'}
 				onChange={onChangeHandler}
+				required
 			/>Grains {''}
 			<div>
 				<input
