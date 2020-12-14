@@ -5,15 +5,11 @@ import AuthContext from '../../context/auth/authContext';
 
 const Home = () => {
 	const authContext = useContext(AuthContext);
-	const { user } = authContext;
+	const { user, isAuthenticated } = authContext;
 
-	useEffect(() => {
-		authContext.loadUser();
-		//eslint-disable-next-line
-	}, []);
-	return (
+	return isAuthenticated && user ? (
 		<Fragment>
-			{user && user.type === 'farmer' ? (
+			{user.type === 'farmer' ? (
 				<div className='container-farmers'>
 					<ActivityForm />
 					<Activities displayEditAndDelete={true} />
@@ -24,7 +20,7 @@ const Home = () => {
 				</div>
 			)}
 		</Fragment>
-	);
+	) : null;
 };
 
 export default Home;
